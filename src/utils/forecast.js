@@ -24,6 +24,7 @@ const forecast = (latitude, longitude, callback) => {
       } else {
         msg2 = "Güzel havanın tadını çıkarmanızı dileriz ..";
       }
+
       if (poss > 30) {
         msg = "Şemsiyenizi yanınızdan ayırmayın ";
       }
@@ -41,7 +42,7 @@ const forecast = (latitude, longitude, callback) => {
           " Hissedilen sıcaklık:  " +
           body.currently.apparentTemperature +
           " derece.      Yağmur olasılığı yüzde : " +
-          body.currently.precipProbability * 100 +
+          Math.floor(body.currently.precipProbability * 100, 2) +
           "    " +
           ". Ayrıca rüzgar hızı saatte :  " +
           body.currently.windSpeed +
@@ -50,6 +51,8 @@ const forecast = (latitude, longitude, callback) => {
           "      " +
           msg2
       );
+      msg = " ";
+      msg2 = " ";
     }
   });
 };
