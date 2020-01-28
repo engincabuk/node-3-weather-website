@@ -37,10 +37,14 @@ const forecast = (latitude, longitude, callback) => {
         deg(),
         " Şu anda sıcaklık : " +
           body.currently.temperature +
-          " derece. Yağmur olasılığı yüzde : " +
+          "  derece.     " +
+          " Hissedilen sıcaklık:  " +
+          body.currently.apparentTemperature +
+          " derece.      Yağmur olasılığı yüzde : " +
           body.currently.precipProbability * 100 +
+          "    " +
           ". Ayrıca rüzgar hızı saatte :  " +
-          body.currently.windSpeed + 
+          body.currently.windSpeed +
           " km/h    " +
           msg +
           "      " +
